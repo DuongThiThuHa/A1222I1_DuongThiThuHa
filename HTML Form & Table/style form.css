@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Times New Roman', Times New Roman;
+    background: #f8eb8e;
+}
+
+p{
+    font-size: 25px;
+    background: #84baf9;
+    height: 30px;
+    width: 50%;
+    text-align: center;
+    color: azure;
+}
+.header{
+background: azure;
+}
+.nav{
+    max-width: 80%;
+    margin: auto;
+}
