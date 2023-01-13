@@ -1,77 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="'X-UA-Compatible" content="IE=edge">
-    <title>Sunni Shop</title>
-    <link rel="stylesheet" href="style form.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Tạo form đơn giản</title>
 </head>
+
 <body>
-<div class="header">
-
-    <div class="nav">
-        <p>SỞ THÍCH CỦA BẠN</p>
-    </div>
-<table>
-<!--Họ và tên-->
-        <tr>
-            <td> Họ và tên </td>
-            <td>
-                <input type=username name="username" >
-            </td>
-        </tr>
-<!--Email-->
-        <tr>
-            <td>Email  </td>
-            <td>
-                <input type="email" name="email" >
-            </td>
-        </tr>
-    </table>
-<!--Sở thích-->
+<!--Phần 1: Sở thích của bạn-->
+<h2 style="background-color: red;color: aliceblue;text-align: center ; width: 450px">SỞ THÍCH CỦA BẠN</h2>
+<form>
     <table>
-        <tr >
-            <td rowspan="4">Sở thích</td>
+        <tr>
+            <td class="info">Họ và Tên</td>
+            <td style="text-align: left"><input type="text"name="hovaten" size="30px" style="margin-right: 43px"></td>
         </tr>
         <tr>
-            <td>
-                <input type="checkbox" name="hobby" value="sport"> Thể Thao
-            </td>
-            <td>
-                <input type="checkbox" name="hobby" value="music"> Âm Nhạc
-            </td>
-            <td>
-                <input type="checkbox" name="hobby" value="book"> Đọc Sách
-            </td>
+            <td class="info">Email</td>
+            <td><input type="email"name="email" size="20px"></td>
         </tr>
-
         <tr>
+            <td>Sở thích</td>
             <td>
-                <input type="checkbox" name="hobby" value="internet"> Lướt Web
-            </td>
-            <td>
-                <input type="checkbox" name="hobby" value="game"> Chơi Game
-            </td>
-            <td>
-                <input type="checkbox" name="hobby" value="cinema"> Điện Ảnh
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <input type="checkbox" name="hobby" value="travel"> Du Lịch
+                <input type="checkbox"name="hobbies" >Thể Thao
+                <input type="checkbox"name="hobbies" >Âm Nhạc
+                <input type="checkbox"name="hobbies"checked>Đọc Sách<br>
+                <input type="checkbox"name="hobbies">Lướt Web
+                <input type="checkbox"name="hobbies">Chơi Game
+                <input type="checkbox"name="hobbies">Điện Ảnh<br>
+                <input type="checkbox"name="hobbies">Du Lịch
             </td>
         </tr>
     </table>
+    <br>
+        <tr>
+            <td>
+                <input type="submit" name="submitform" value="Gửi Thông Tin" >
+                <input type="reset"name="submitreset" value="Nhập Lại">
+            </td>
+        </tr>
+</form>
+<br><br><br>
+<!--Phần 2: Đăng Ký sinh viên-->
+<form action="">
+    <table style="background: #f8eb8e" width="350px">
+        <tr  style="font: medium">
+        <td  style="background-color: #9edf9e;color:blue;text-align: left; width: 400px">ĐĂNG KÝ HỌC VIÊN</td>
+        </tr>
 
-    <button type="button" onclick=" ">Gửi thông tin</button>
-    <button type="button" onclick=" ">Nhập lại</button>
+        <tr>
+            <td>Họ và tên</td>
+            <td colspan="2"><input type="text" name="fullname" size="20" </td>
+        </tr>
+
+        <tr>
+            <td> Ngày sinh </td>
+            <td colspan="2"><input type="text" name="Dob" size="20"></td>
+        </tr>
+
+        <tr>
+            <td> Giới tính </td>
+            <td><input type="radio" name="Sex"> Nam</td>
+            <td><input type="radio" name="Sex"> Nữ</td>
+        </tr>
+
+        <tr>
+            <td>Địa chỉ </td>
+            <td colspan="2"><input type="text" name="Address" size="20" style="height: 60px"></td>
+        </tr>
+
+        <tr>
+            <td>Lớp</td>
+            <td colspan="2"><select name="Lớp" id="">
+                <option value="">--Chọn Lớp--</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+                <option value="">11</option>
+                <option value="">12</option>
+                <option value="">Khác</option>
+            </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email</td>
+            <td colspan="2"><input type="text" name="Email" size="20"></td>
+        </tr>
+
+        <tr>
+            <td>Số điện thoại</td>
+            <td colspan="2"><input type="text" name="PhoneNumber" size="20"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Đăng Ký"></td>
+            <td><input type="reset" value="Nhập lại"></td>
+        </tr>
+    </table>
+
 
 </form>
-</div>
+
 </body>
+
 </html>
