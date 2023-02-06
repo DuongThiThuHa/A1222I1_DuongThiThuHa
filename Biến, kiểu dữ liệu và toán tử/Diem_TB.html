@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Tổng Hợp</title>
+</head>
+<body>
+<!--Bài 1-->
+<div class="box" style="text-align: center;font-size: x-large" >
+    <P style="text-align: center;color: red">Tính Điểm Trung Bình 3 môn</P>
+    <input type="text" id="Physical" placeholder="Điểm Vật Lý">
+    <input type="text" id="chemistry" placeholder="Điểm Hóa Học">
+    <input type="text" id="biology" placeholder="Điểm Sinh Học">
+    <button onclick="avgSubect()">Xuất Điểm</button>
+    <br>
+    <input type="text" readonly id="output" placeholder="Tông Điểm 3 môn" style="margin-top: 12px;">
+    <input type="text" readonly id="output1" placeholder="Điểm Trung Bình" style="margin-top: 12px;">
+</div>
+<script>
+    function avgSubect(){
+        var a= document.getElementById("Physical").value.trim()
+        var b= document.getElementById("chemistry").value.trim()
+        var c= document.getElementById("biology").value.trim()
+        var avg = (parseFloat(a) + parseFloat(b) +parseFloat(c) ) /3
+        var S = (parseFloat(a) + parseFloat(b) +parseFloat(c) )
+        document.getElementById('output').value = avg;
+        document.getElementById('output1').value = S;
+    }
+</script>
+<br><hr>
+
+<!--Bài 2 -->
+<div class="box" style="text-align: center;font-size: x-large" >
+    <P style="text-align: center;color: red">Đổi Nhiệt Độ</P>
+    <input type="text" id="Temp_C" placeholder="Nhập độ C">
+    <button onclick="tempSubect()">Đổi</button>
+    <br>
+    <input type="text" readonly id="output2" placeholder="Nhiệt Độ F" style="margin-top: 12px;">
+</div>
+<script>
+    function tempSubect(){
+        var T= document.getElementById("Temp_C").value.trim()
+        var S = (((parseFloat(T)*9)/5)+32 )
+        document.getElementById('output2').value = S;
+    }
+</script>
+
+<br><hr>
+<!--Bài 3-->
+<div class="box" style="text-align: center;font-size: x-large" >
+    <P style="text-align: center;color: red">Diện Tích Và Chu Vi Hình Tròn</P>
+    <input type="text" id="R" placeholder="Nhập Bán Kính">
+    <button onclick="SSubect()">Đổi</button>
+    <br>
+    <input type="text" readonly id="output3" placeholder="Diện tích hình tròn" style="margin-top: 12px;">
+    <input type="text" readonly id="output4" placeholder="Chu vi hình tròn" style="margin-top: 12px;">
+
+</div>
+<script>
+    function SSubect(){
+        var r= document.getElementById("R").value.trim()
+        var S = (parseFloat(r)*parseFloat(r)*Math.PI)
+        var C = (parseFloat(r)*2*Math.PI)
+        document.getElementById('output3').value = S;
+        document.getElementById('output4').value = C;
+
+    }
+</script>
+
+</body>
+</html>
