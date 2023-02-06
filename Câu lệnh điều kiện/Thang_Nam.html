@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tháng Năm</title>
+</head>
+<body>
+<!--<div class="box" style="text-align: center;font-size: x-large" >-->
+<!--    <P style="text-align: center;color: red">Tính được số ngày trong một tháng</P>-->
+<!--    <input type="text" id="ngày" placeholder="Nhập ngày">-->
+<!--    <button onclick="month">Tính số ngày</button>-->
+<!--    <br>-->
+<!--</div>-->
+<script>
+    let month=+prompt("Nhập vào ngày: ")
+    switch (month) {
+        case 1:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            document.write("Tháng có 31 ngày");
+            break;
+        case 2:
+            document.write("Tháng có 28 hoặc 29 ngày");
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            document.write("Tháng có 30 ngày");
+            break;
+            default:
+                document.write("Nhập ngày sai");
+    }
+</script>
+</body>
+</html>
