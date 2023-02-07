@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 6</title>
+</head>
+<body>
+<script>
+    let doanhthu = prompt('Nhập doanh thu bán hàng:');
+    let hoahong
+    if(doanhthu>=10000000)
+        hoahong=doanhthu*0.3;
+    else if (doanhthu>=1000000)
+        hoahong=doanhthu*0.2;
+    if (doanhthu>=100000)
+        hoahong = doanhthu * 0.1;
+    else
+        document.write("Doanh thu quá thấp nên không thể nhận tiền hoa hồng");
+    alert('Số tiền hoa hồng nhận được là: '+ hoahong.toLocaleString('vi-VN',{style: 'currency',currency: 'VND'}));
+</script>
+</body>
+</html>
