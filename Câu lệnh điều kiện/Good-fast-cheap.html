@@ -2,40 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ứng dụng Good-fast-cheap</title>
 </head>
 <body>
-<div class="container">
-    <h1>Toggle Switch</h1>
+
+    <div class="container">
+        <h1>Toggle Switch</h1>
     <label class="switch">
         <input type="checkbox" checked>
-        <span class="slider"></span>
-    </label>
+    <span class="slider"></span>
+        </label>
 
-    <label class="switch">
+        <label class="switch">
         <input type="checkbox">
         <span class="slider"></span>
-    </label>
+        </label>
 
-    <label class="switch">
+        <label class="switch">
         <input type="checkbox" checked>
-        <span class="slider"></span>
-    </label>
-</div>
+    <span class="slider"></span>
+        </label>
+        </div>
 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+            .container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
     }
-
-     .container{
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%,-50%);
-         text-align: center;
-     }
 
     h1{
         margin-bottom: 40px;
@@ -77,12 +78,13 @@
     }
 
     input:checked + .slider{
-        background-color: #0073ff;
+        background-color: #559af3;
     }
 
     input:checked + .slider:before{
         transform: translateX(50px);
     }
-</style>
+    </style>
+
 </body>
 </html>
