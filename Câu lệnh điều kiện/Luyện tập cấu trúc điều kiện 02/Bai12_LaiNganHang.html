@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lai Ngan Hang</title>
+    <title>Title</title>
 </head>
 <body>
-<script>
-    let pvn =+prompt("Nhap vao so tien muon gui : ")
-    let n =+prompt("Nhap vao thoi gian muon gui (thang): ")
-    let r =+prompt("Nhap vao lai suat trung binh hang thang ")
-    let fvn =(pvn*(Math.pow(1+r,n)-1))/r
-    if (n>1){
-        document.write("Tong gia tri nhan duoc sau "+ n + " thang gui ngan hang la : "+fvn)
-    }
-</script>
+
 </body>
 </html>
+<script>
+    let soTienLuong=parseFloat(prompt('Nhap tien luong moi thang: '));
+    if (soTienLuong>=20000000){
+        tienThue=(soTienLuong*20)/100;
+    } else if(soTienLuong>=15000000) {
+        tienThue=(soTienLuong*15)/100
+    } else if(soTienLuong>=10000000) {
+        tienThue=(soTienLuong*10)/100;
+    } else if(soTienLuong>=5000000) {
+        tienThue=(soTienLuong*5)/100;
+    } else {
+        tienThue=(soTienLuong*0)/100;
+    }
+    alert('số tiền thuế của bạn mỗi tháng là: '+ tienThue+' VND');
+</script>
