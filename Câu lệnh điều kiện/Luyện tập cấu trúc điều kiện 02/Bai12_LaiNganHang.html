@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lai Ngan Hang</title>
+</head>
+<body>
+<script>
+    let pvn =+prompt("Nhap vao so tien muon gui : ")
+    let n =+prompt("Nhap vao thoi gian muon gui (thang): ")
+    let r =+prompt("Nhap vao lai suat trung binh hang thang ")
+    let fvn =(pvn*(Math.pow(1+r,n)-1))/r
+    if (n>1){
+        document.write("Tong gia tri nhan duoc sau "+ n + " thang gui ngan hang la : "+fvn)
+    }
+</script>
+</body>
+</html>

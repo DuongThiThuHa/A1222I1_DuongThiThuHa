@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai phuong trinh bac 2</title>
+</head>
+<body>
+<script>
+    let a =+prompt("Nhap vao so dau tien ")
+    let b =+prompt("Nhap vao so thu hai ")
+    let c =+prompt("Nhap vao so thu ba ")
+    let t = b*b-4*a*c;
+    let x1=(-b+Math.sqrt(t))/2
+    let x2=(-b-Math.sqrt(t))/2
+    if (t<0)
+        document.write("Phuong trinh vo nghiem")
+    else if (t = 0)
+        document.write("Phuong trinh co nghiem kep : x1=x2="+(-b/2*a))
+    else
+        document.write("Phuong trinh co 2 nghiem phan biet la : x1 = " +x1 +" va "+ "x2= " +x2 )
+
+</script>
+</body>
+</html>
