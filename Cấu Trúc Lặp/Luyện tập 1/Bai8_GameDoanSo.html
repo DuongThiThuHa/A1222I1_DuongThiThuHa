@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+<input type="button" onclick="play()" value="Chơi">
+<script>
+    function play() {
+        let n1 = + prompt("Nhap so bat dau :)");
+        let n2 = + prompt("Nhap so bat dau :)");
+        numRandom = Math.floor(Math.random() * (num2 - num1 + 1) ) + num1;
+        let i = 0;
+        while (i < 3){
+            let num3 = + prompt("Nhập số bạn muốn đoán:");
+            if (num3>numRandom){
+                alert("Số bạn đoán lớn hơn, hãy đoán lại");
+            }else if (num3<numRandom){
+                alert("Số bạn đoán nhỏ hơn, hãy đoán lại");
+            }else alert("Chúc mừng");
+            i++;
+        }
+    }
+</script>
+</body>
+</html>

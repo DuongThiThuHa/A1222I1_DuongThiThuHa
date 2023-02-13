@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day So Fibonacci</title>
+</head>
+<body>
+<script>
+    const n = parseInt(prompt('Nhap vao so luong can tim : '));
+    let n1 = 0, n2 = 1, nextTerm;
+    let arr = [] ;
+    document.write("Day So Fibonacci :" + "<br>");
+    for (let i = 0; i <= n; i++) {
+        document.write(n1 + "<br>");
+        nextTerm = n1 + n2;
+        n1 = n2;
+        n2 = nextTerm;
+        if (i % 5 === 0 || i % 5 === 5) {
+            arr.push(i) ;
+        }
+    }
+    document.write("so chia het cho 5 la " + arr.join(" "));
+
+<!--    let countCurrent = 0;-->
+<!--    let arr = [];-->
+<!--    let find = +prompt("nhap so luong can tim")-->
+<!--    for(let i =1,j=0;j<find;j++){-->
+<!--        countCurrent = countCurrent + i;-->
+<!--        document.write(countCurrent + " ");-->
+<!--        if (countCurrent%5==0) {-->
+<!--            arr.push(countCurrent);-->
+<!--        }-->
+<!--        i = countCurrent - i;-->
+<!--    }-->
+<!--    document.write("<br>" + arr.join(" "))-->
+</script>
+</body>
+</html>
