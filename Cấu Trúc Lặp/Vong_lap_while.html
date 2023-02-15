@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vòng lặp while </title>
+    <title>Sinh bảng cửu chương</title>
 </head>
 <body>
 <script>
-    let n
-    let s=+n
-    document.write(parseInt(prompt("Hien thi danh sach cac so nhap vao ")));
-    if (n === -1) {
-        document.write("dung chuong trinh ");
-    } else {
-        document.write(`tong cac so la : ${s}`)
-    }
+    let i;
+    let j;
+    let a;
+    a = "<table border='2' width='800' cellspacing='2' cellpadding='5'>";
+    for (i = 1; i < 11 ; i++){
+        a = a + "<tr>";
+        for (j = 2; j <= 9; j++){
+            a = a + "<td>" + j + "x" + i + "=" + i * j + "</td>";
+        }
+        a = a + "</tr>";
+    } document.write("<br>");
+    a = a + "<table>";
+    document.write(a);
 </script>
-
 </body>
 </html>

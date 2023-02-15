@@ -5,22 +5,29 @@
     <title>Game</title>
 </head>
 <body>
-<input type="button" onclick="play()" value="Chơi">
+<input type="button" onclick="play()" value="START">
 <script>
     function play() {
-        let n1 = + prompt("Nhap so bat dau :)");
-        let n2 = + prompt("Nhap so bat dau :)");
-        numRandom = Math.floor(Math.random() * (num2 - num1 + 1) ) + num1;
-        let i = 0;
-        while (i < 3){
-            let num3 = + prompt("Nhập số bạn muốn đoán:");
-            if (num3>numRandom){
-                alert("Số bạn đoán lớn hơn, hãy đoán lại");
-            }else if (num3<numRandom){
-                alert("Số bạn đoán nhỏ hơn, hãy đoán lại");
-            }else alert("Chúc mừng");
-            i++;
+        let min = + prompt("Nhap so nho nhat trong khoang ban muon doan :");
+        let max = + prompt("Nhap so lon nhat trong khoang ban muon doan :");
+        let Random = (Math.floor(Math.random() * (max - min + 1) ) + min);
+        let solannhap = 1;
+        let i =+prompt("Nhap vao khoang ban muon doan : ");
+        do {
+            if (i > Random){
+            i = prompt("Hay nhap so khac nho hon :");}
+            if (i < Random){
+                i = prompt("Hay nhap so khac lon hon :");}
+            if (i === Random){
+                i = alert("Chuc mung ban da doan dung ! ");}
+            solannhap++;
+            if(solannhap===3){
+                alert("Ban da thua ! Nhan START de choi lai ");
+                break;
+            }
         }
+        while (i != Random);
+
     }
 </script>
 </body>
