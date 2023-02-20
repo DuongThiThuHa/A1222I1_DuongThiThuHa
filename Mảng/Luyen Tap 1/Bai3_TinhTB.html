@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh TB</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let max = 0;
+    let dem = 0;
+    let avg = 0;
+    let count=0;
+    for (let i = 0; i < 10; i++) {
+        arr[i] =+prompt("Nhập vào: ");
+        count+=arr[i];
+        if (arr[i] >= max) {
+            max = arr[i];
+            dem=i;
+        }
+    }
+    avg=count/arr.length;
+    document.write("Day So Vua Nhap La : " + arr+"<br>");
+    document.write("So Lon Nhat Trong Mang La : "+max + " Gia Tri Trung Binh Cua Mang La :"+ avg);
+</script>
+</body>
+</html>

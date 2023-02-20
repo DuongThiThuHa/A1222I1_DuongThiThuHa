@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form don gian</title>
+</head>
+<body>
+<input type="text" id="txtValue">
+<input type="button" value="Dịch" onclick="transform()">
+<div id="result"></div>
+<script>
+    let english = ["camp", "basketball", "book", "picture", "music", "flower"];
+    let vietnamese = ["cắm trại", "bóng rổ", "sách", "tranh vẽ", " âm nhạc", "hoa"];
+
+    function transform() {
+        tu = document.getElementById("txtValue").value;
+        for (i = 0; i < english.length; i++) {
+            if (tu === english[i]) {
+                document.write(vietnamese[i]);
+            }
+        }
+        for (i = 0; i < vietnamese.length; i++) {
+            if (tu === vietnamese[i]) {
+                document.write(english[i]);
+            }
+        }
+    }
+</script>
+</body>
+</html>
