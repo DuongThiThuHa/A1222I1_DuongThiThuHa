@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lương Nhân Viên</title>
+</head>
+<body>
+<script>
+    let n=+prompt("Nhap vao so tien lương : ");
+    let r // thue
+    if (n>15){
+        r=0.2*n;
+        document.write("Thue thu nhap la : "+r);
+    }
+    if (n>7 && n<15){
+        r=0.1*n;
+        document.write("Thue thu nhap la : "+r);
+    }
+    if (n<7){
+        r=0.05*n;
+        document.write("Thue thu nhap la : "+r);
+    }
+</script>
+</body>
+</html>

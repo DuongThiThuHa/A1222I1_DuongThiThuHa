@@ -7,12 +7,12 @@
 <body>
 <script>
     const n = parseInt(prompt('Nhap vao so luong can tim : '));
-    let dem ;
-    for (let i = 0; i < 30; i++) {
-        if (i % 7 === 0 || i % 0 === 0) {
-            // dem =+ i ;
-            document.write("so chia het cho 7 la " + i +"<br>");
-
+    let dem =0;
+    let i ;
+        if (i % 7 === 0 || i % 7 === 7) {
+            for (; i <= n; i++) {
+            dem =+ i ;
+            document.write("so chia het cho 7 la " + dem +"<br>");
         }
     }
 </script>

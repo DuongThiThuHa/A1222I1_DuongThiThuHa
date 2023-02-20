@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Doi Nhiet Do</title>
+    <title>Đổi Nhiệt Độ</title>
 </head>
 <body>
 <script>
-    let a = +prompt("Nhap vao nhiet do : ")
-    for (let i = 0; i < a; i++) {
-        if (a > 100)
-            alert("Yeu cau nguoi dung giam nhiet do");
-        else if (a >= 20 && a <= 100)
-            alert("Nhiet do on dinh ");
-        else
-            alert("Yeu cau nguoi dung tang nhiet do");
-    }
+
+        let t;
+        do {
+            t =parseFloat(prompt("Nhap vao nhiet do : "));
+            if(t<20){
+                document.write("Tang Nhiet Do");
+            }else if (t>100){
+                document.write("Giam Nhiet Do");
+            }
+        }
+        while (t >100 || t <20);
+        document.write("Nhiet do hien tai la : " + t);
+
+
 </script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra ky tu </title>
+</head>
+<body>
+<script>
+    let c=prompt("Nhap vao 1 ky tu : ");
+    let a = ["A","E","O","U","I","a","e","i","o","u"]
+    console.log(c)
+    if(!a.some((value)=> c===value))
+    //!a:phu dinh cua chuoi a
+        //.some:<=> voi vong lap, kiem tra gia tri nhap vao & gia tri trong chuoi
+        //=>: <=> return
+    {
+        document.write("Ban da nhap sai!.Vui long nhap lai");
+    } else{
+            document.write("Chinh xac !");
+    }
+</script>
+</body>
+</html>
