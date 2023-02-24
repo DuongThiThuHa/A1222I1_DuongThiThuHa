@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Noi 2 mang</title>
+</head>
+<body>
+<script>
+    let arr1=[];
+    let arr2=[];
+    let arr3=[];
+    arr3=arr1.concat(arr2);
+    for (let i = 0; i < 10; i++) {
+        arr1[i]=prompt("Nhap vao mang a: ");
+    }
+    for (let j = 0; j < 10; j++) {
+        arr2[j]=prompt("Nhap vao mang b: ")
+    }
+    arr3=arr1.concat(arr2);
+    document.write("Mang a :"+arr1+"<br>");
+    document.write("Mang b:" +arr2+"<br>");
+    document.write("Noi 2 mang a va b : "+arr3);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xoa Phan Tu Trong Mang</title>
+</head>
+<body>
+<script>
+    let arr = [1,2,3,4,5,6,7,8,9,10];
+    document.write("Chuoi ban dau : "+arr+"<br>");
+    let V = +prompt("Nhập vào số bạn cần xoá")
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.indexOf(V) !== -1){
+            arr.splice(arr.indexOf(V),1)
+            arr.push(0)
+        }
+    }
+    document.write("Chuoi sau khi xoa V : "+arr)
+
+    // let arr = [];
+    // let V = +prompt("Nhap vao phan tu can xoa: ")
+    // for (let i = 0; i < arr.length; i++) {
+    //     arr[i]=prompt("Nhap vao 1 chuoi:  ")
+    //     if (arr.indexOf(V) !== -1){
+    //         arr.splice(arr.indexOf(V),1)
+    //         arr.push(0)
+    //     }
+    // }
+    // document.write(arr)
+
+</script>
+</body>
+</html>
