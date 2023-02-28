@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dao Mang </title>
+</head>
+<body>
+<script>
+    let str = prompt("nhap vao mot chuoi");
+    let arr =  str.split("");
+    let newArray = [];
+    function daomang() {
+       newArray = arr.reverse();
+        document.write("Mang dao nguoc: " + newArray.join(""));
+    }
+daomang();
+</script>
+</body>
+</html>

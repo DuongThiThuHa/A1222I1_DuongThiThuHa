@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lan Xuat Hien</title>
+</head>
+<body>
+<script>
+    let arr= prompt(" nhập vào mảng kí tự");
+    let a = prompt("nhập vào 1 kí tự");
+    let arr1= [];
+
+    function kiemtra(array,n) {
+        let count = 0 ;
+        for (let i = 0; i <array.length ; i++) {
+            arr[i]=array.slice(i,i+1);
+            if(arr[i] === n ){
+                count ++;
+            }
+        }
+        return count;
+        if(count ===0){
+            return -1;
+        }
+    }
+    document.write("So ki tu trong mang:  "+kiemtra(arr,a))
+</script>
+</body>
+</html>

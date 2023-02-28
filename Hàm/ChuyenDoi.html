@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Doi</title>
+</head>
+<body>
+<script>
+    let a=footToMeter(prompt("Nhap vao 1 so chuyen tu f -> m: "));
+    function footToMeter(foot){
+      let meter = 0.305 * foot;
+      return meter;
+    }
+    document.write("Gia tri chuyen doi: "+a+"<br>");
+
+    let b=meterToFoot(prompt("Nhap vao 1 so chuyen tu m -> f: "));
+    function meterToFoot(meter){
+       let foot = 3.279 * meter;
+        return foot;
+    }
+    document.write("Gia tri chuyen doi: "+b);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinh Tron</title>
+</head>
+<body>
+<script>
+    let S=0;
+    let C=0;
+
+    let r =+prompt("Nhap vao ban kinh hinh tron: ");
+    function hinhtron() {
+        S=((Math.pow(r,2))*Math.PI);
+        C=(2*Math.PI*r);
+    }
+    hinhtron();
+    document.write("Chu vi hinh tron la : "+C+"<br>");
+    document.write("Dien tich hinh tron la : "+S);
+</script>
+</body>
+</html>

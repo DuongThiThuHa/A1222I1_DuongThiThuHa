@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doi Cho</title>
+</head>
+<body>
+<script>
+    let a=+prompt("Nhap vao so thu nhat ");
+    let b=+prompt("Nhap vao so thu hai ");
+    document.write("Cac so vua nhap: "+a+","+b+"<br>");
+    function doi() {
+        let temp=a;
+        a=b;
+        b=temp;
+    }
+    doi();
+    document.write("Gia tri sau khi thay doi :"+a+","+b);
+</script>
+</body>
+</html>

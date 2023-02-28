@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mang Ngoi Sao</title>
+</head>
+<body>
+<input type="text" id="txtValue">
+<input type="button" value="Search" onclick="star()">
+<div id="result"></div>
+<script>
+    let arr1=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
+    let arr2=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"];
+    function star() {
+      tu = document.getElementById("txtValue").value;
+        for (let i = 0; i < arr1.length; i++) {
+            if (tu === arr1[i]) {
+                document.write(arr2[i]);
+                break;
+            } else {
+                document.write("Khong tim thay gia tri");
+                break;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
