@@ -6,24 +6,26 @@
 </head>
 <body>
 <input type="text" id="txtValue">
-<input type="button" value="Search" onclick="star()">
+<input type="button" value="Search" onclick="findStar()">
 <div id="result"></div>
 <script>
     let arr1=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
     let arr2=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"];
-    function star() {
+    let flag = false;
+    function findStar() {
       tu = document.getElementById("txtValue").value;
-        for (let i = 0; i < arr1.length; i++) {
+        for (let i = 0; i <= arr1.length; i++) {
             if (tu === arr1[i]) {
                 document.write(arr2[i]);
-                break;
-            } else {
-                document.write("Khong tim thay gia tri");
+                flag = true;
                 break;
             }
         }
+        if (flag === false){
+            document.write("Khong tim thay gia tri ");
+        }
     }
-
+star();
 </script>
 </body>
 </html>

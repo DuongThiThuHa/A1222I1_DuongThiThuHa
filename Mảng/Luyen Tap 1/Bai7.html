@@ -9,24 +9,41 @@
     let arr = [1,2,3,4,5,6,7,8,9,10];
     document.write("Chuoi ban dau : "+arr+"<br>");
     let V = +prompt("Nhập vào số bạn cần xoá")
+    let flag = false;
     for (let i = 0; i < arr.length; i++) {
         if (arr.indexOf(V) !== -1){
             arr.splice(arr.indexOf(V),1)
             arr.push(0)
+            flag = true;
+            break
         }
     }
-    document.write("Chuoi sau khi xoa V : "+arr)
+    if(flag === false){
+        document.write("Phan tu "+V+" ban can xoa khong co trong mang "+"<br>");
+    }else {
+    document.write("Chuoi sau khi xoa V : "+arr+"<br>");}
 
-    // let arr = [];
-    // let V = +prompt("Nhap vao phan tu can xoa: ")
-    // for (let i = 0; i < arr.length; i++) {
-    //     arr[i]=prompt("Nhap vao 1 chuoi:  ")
+
+    // let str=prompt("Nhap vao 1 chuoi:  ");
+    // let arr = str.split(" ");
+    // document.write("Chuoi vua nhap la : "+arr+"<br>");
+    // let V =+prompt("Nhap vao phan tu can xoa: ");
+    // document.write("Phan tu can xoa la : "+V+"<br>");
+    //
+    // let flag=false;
+    // for (let i = 0; i <= arr.length; i++) {
     //     if (arr.indexOf(V) !== -1){
     //         arr.splice(arr.indexOf(V),1)
-    //         arr.push(0)
+    //         arr.push(0);
+    //         flag = true;
+    //         break;
     //     }
     // }
-    // document.write(arr)
+    // if(flag === false){
+    //     document.write("Phan tu "+V+" ban can xoa khong co trong mang "+"<br>");
+    // }else {
+    // document.write("Chuoi sau khi xoa V : "+arr+"<br>");
+    // }
 
 </script>
 </body>
