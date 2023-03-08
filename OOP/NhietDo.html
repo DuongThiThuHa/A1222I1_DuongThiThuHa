@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doi Nhiet Do</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(C) {
+            this.C = C;
+        }
+
+        getTempF() {
+            let tempF = this.C * 1.8 + 32;
+            return tempF;
+        }
+
+        getTempK() {
+            let tempK = this.C + 373.15;
+            return tempK;
+        }
+    }
+    let C=+prompt("Nhap vao do C : ");
+
+    let temp = new Temperature(C);
+    document.write("Chuyển từ độ C sang độ F: "+ temp.getTempF()+"<br>");
+    document.write("Chuyển từ độ C sang độ K: "+ temp.getTempK());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HinhChuNhat</title>
+</head>
+<body>
+<script>
+    class Rectangle{
+        constructor(height,width) {
+            this.height = height;
+            this.width = width;
+        }
+
+        getDienTich (){
+            let dienTich = this.height * this.width;
+            return dienTich;
+        }
+
+        getChuVi (){
+            let chuVi = (this.height + this.width) * 2;
+            return chuVi;
+        }
+    }
+
+    let height=parseInt(prompt("Nhap vao chieu dai: (don vi : int)"));
+    let width=parseInt(prompt("Nhap vao chieu rong: (don vi : int)"));
+
+    let rectangleObj =new Rectangle(height,width)
+    document.write("Dien tich hinh chu nhat: "+rectangleObj.getDienTich()+"<br>");
+    document.write("Chu vi hinh chu nhat : "+rectangleObj.getChuVi());
+
+</script>
+</body>
+</html>

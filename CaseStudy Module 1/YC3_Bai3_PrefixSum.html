@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfix Sum</title>
+</head>
+<body>
+<script>
+    const a = arr => {
+        // Get the size of the array.
+        const n = arr.length
+        // Create an empty array of the same size as input.
+        const result = new Array(n)
+        // Initialize the first position of the array with the same value as the first item of the item.
+        result[0] = arr[0]
+        // Go through the input array, starting in the position 0, to the n.
+        for (let i = 1; i < n; i++) {
+            b[i] = +prompt("Nhap vao 1 chuoi ki tu ");
+            // Assign the result of the previous value and the value in the current position in the input array.
+            result[i] = result[i - 1] + arr[i]
+        }
+        return result
+    }
+    const b = [];
+    // for (let i = 0; i < n; i++) {
+    //     b[i] =+ prompt("Nhap vao 1 chuoi ki tu ");
+    // }
+    document.write(a(b));
+</script>
+</body>
+</html>
