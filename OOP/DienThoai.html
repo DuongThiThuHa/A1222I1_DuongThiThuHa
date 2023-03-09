@@ -29,7 +29,7 @@
             outBox; // Xuat tin nhan
             inBox; //Nhap tin nhan
 
-            constructor(status, battery ,inBox , outBox) {
+            constructor(status, battery, inBox, outBox) {
                 this.status = status;
                 this.battery = battery;
                 this.outBox = [];
@@ -158,17 +158,17 @@
 
         downBattery();
 
-//Tin nhan
+        //Tin nhan
         function sendMessage(id) {
-            if (id === 'send_ip'){
+            if (id === 'send_ip') {
                 let message = document.getElementById('screen_iphone').value;
-                console.log('message ---> ',message);
+                console.log('message ---> ', message);
                 console.log('get out box --->', iphone.getOutBox());
 
                 iphone.setOutBox(iphone.getOutBox().push(message));
             } else {
                 let message = document.getElementById('screen_nokia').value;
-                console.log('message ---> ',message);
+                console.log('message ---> ', message);
                 console.log('get out box --->', nokia.getOutBox());
 
                 nokia.setOutBox(nokia.getOutBox().push(message));
