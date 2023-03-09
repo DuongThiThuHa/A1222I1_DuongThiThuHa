@@ -10,7 +10,7 @@
 <button id="iphone" onclick="onOff(this.id)">OFF</button>
 <button id="battery_ip"></button>
 <button id="number"></button>
-<button id="send_ip" onclick="sendMessage(this.id)">Send</button>
+<button id="send_ip" onclick="sendMessage(this.id)">SEND</button>
 <textarea id="screen_iphone" disabled></textarea>   <!--disabled: khongkhadung-->
 
 <hr>
@@ -19,7 +19,7 @@
 <button id="nokia" onclick="onOff(this.id)">OFF
     <button id="battery_no"></button>
     <button id="number1"></button>
-    <button id="send_no" onclick="sendMessage(this.id)">Send</button>
+    <button id="send_no" onclick="readMes()">READ</button>
     <textarea id="screen_nokia" disabled></textarea>
 
     <script>
@@ -129,7 +129,13 @@
                 document.getElementById('iphone').innerHTML = "ON";
             }
 
-            if (number > 0 && number <= 20) {
+            if (number === 20) {
+                document.getElementById('iphone').innerHTML = "ON";
+                alert("Dien thoai con " + number + "% . Vui long cam sac !");
+                document.getElementById("screen_iphone").disabled = false; // bat dt co the soan tin nhan
+            }
+
+            if (number === 10) {
                 document.getElementById('iphone').innerHTML = "ON";
                 alert("Dien thoai con " + number + "% . Vui long cam sac !");
                 document.getElementById("screen_iphone").disabled = false; // bat dt co the soan tin nhan
@@ -142,7 +148,17 @@
             }
 
 //         NOKIA
-            if (number > 0 && number <= 20) {
+            if (number <= 100) {
+                document.getElementById('nokia').innerHTML = "ON";
+            }
+
+            if (number === 20) {
+                document.getElementById('nokia').innerHTML = "ON";
+                alert("Dien thoai con " + number + "% . Vui long cam sac !");
+                document.getElementById("screen_nokia").disabled = false; // bat dt co the soan tin nhan
+            }
+
+            if (number === 10) {
                 document.getElementById('nokia').innerHTML = "ON";
                 alert("Dien thoai con " + number + "% . Vui long cam sac !");
                 document.getElementById("screen_nokia").disabled = false; // bat dt co the soan tin nhan
@@ -159,21 +175,35 @@
         downBattery();
 
         //Tin nhan
+        let count = 0;
         function sendMessage(id) {
+            let message = document.getElementById('screen_iphone').value;
+            let temp;
+            // temp=message.splice()
             if (id === 'send_ip') {
-                let message = document.getElementById('screen_iphone').value;
                 console.log('message ---> ', message);
                 console.log('get out box --->', iphone.getOutBox());
 
-                iphone.setOutBox(iphone.getOutBox().push(message));
-            } else {
-                let message = document.getElementById('screen_nokia').value;
-                console.log('message ---> ', message);
-                console.log('get out box --->', nokia.getOutBox());
+                iphone.getOutBox().push(message);
+                nokia.setInBox(iphone.getOutBox())
+                console.log(nokia.getInBox())
+                count++;
+                document.getElementById('screen_nokia').value= "Ban co "+ count +' tin nhan';
 
-                nokia.setOutBox(nokia.getOutBox().push(message));
+            } else {
+                // let message = document.getElementById('screen_nokia').value;
+                // console.log('message ---> ', message);
+                console.log('get out box --->', nokia.getOutBox());
+                nokia.getOutBox().push(message);
             }
         }
+
+        function readMes() {
+            document.getElementById('screen_nokia').value=nokia.getInBox();
+            console.log('o day ',nokia.getInBox());
+            
+        }
+
     </script>
 </body>
 </html>
