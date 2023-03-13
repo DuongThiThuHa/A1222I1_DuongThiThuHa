@@ -11,6 +11,7 @@
 <button id="battery_ip"></button>
 <button id="number"></button>
 <button id="send_ip" onclick="sendMessage(this.id)">SEND</button>
+<button id="send_ip1" onclick="readMes()">READ</button>
 <textarea id="screen_iphone" disabled></textarea>   <!--disabled: khongkhadung-->
 
 <hr>
@@ -19,7 +20,8 @@
 <button id="nokia" onclick="onOff(this.id)">OFF
     <button id="battery_no"></button>
     <button id="number1"></button>
-    <button id="send_no" onclick="readMes()">READ</button>
+    <button id="send_no1" onclick="sendMessages('send_no')">SEND</button>
+    <button id="send_no" onclick="readMesNokia()">READ</button>
     <textarea id="screen_nokia" disabled></textarea>
 
     <script>
@@ -116,8 +118,10 @@
 
         showBattery();
 
-        let number = 101;       //phan tram pin
-        let batteryDown;        //giam phan tram pin
+        let number = 5;       //Phan tram pin
+        // let number1=0;
+        let batteryDown;     //Giam phan tram pin
+        let batteryUp;      //Sac pin
         function downBattery() {
             number--;
             document.getElementById('number').innerHTML = number + '%';
@@ -144,7 +148,6 @@
             if (number === 0) {
                 document.getElementById('iphone').innerHTML = "OFF";
                 document.getElementById("screen_iphone").disabled = true;  // bat dt khong the soan tin nhan
-                return;
             }
 
 //         NOKIA
@@ -174,34 +177,75 @@
 
         downBattery();
 
-        //Tin nhan
+        //Sạc pin
+        //         function upBattery() {
+        //             number++;
+        //             document.getElementById('number').innerHTML = number + '%';
+        //             document.getElementById('number1').innerHTML = number + '%';
+        //
+        //             // Thong bao tinh trang pin duoi
+        //             // IPHONE
+        //             if (number === 0){
+        //                 number ++;
+        //             }
+        //
+        // //         NOKIA
+        //             if (number === 0) {
+        //                 number ++ ;
+        //                 document.getElementById('nokia').innerHTML = "ON";
+        //             }
+        //             batteryUp = setTimeout(upBattery, 5000);
+        //         }
+        //         upBattery();
+
+
+        //Tin nhan iphone
         let count = 0;
+
         function sendMessage(id) {
             let message = document.getElementById('screen_iphone').value;
-            let temp;
-            // temp=message.splice()
             if (id === 'send_ip') {
                 console.log('message ---> ', message);
                 console.log('get out box --->', iphone.getOutBox());
-
                 iphone.getOutBox().push(message);
                 nokia.setInBox(iphone.getOutBox())
                 console.log(nokia.getInBox())
                 count++;
-                document.getElementById('screen_nokia').value= "Ban co "+ count +' tin nhan';
-
+                document.getElementById('screen_nokia').value = "Ban co " + count + ' tin nhan';
             } else {
-                // let message = document.getElementById('screen_nokia').value;
-                // console.log('message ---> ', message);
                 console.log('get out box --->', nokia.getOutBox());
                 nokia.getOutBox().push(message);
             }
         }
 
         function readMes() {
-            document.getElementById('screen_nokia').value=nokia.getInBox();
-            console.log('o day ',nokia.getInBox());
-            
+            document.getElementById('screen_iphone').value = iphone.getInBox();
+            console.log('o day ', nokia.getInBox());
+        }
+
+        //Tin nhan nokia
+        let count1 = 0;
+
+        function sendMessages(id) {
+            let messages = document.getElementById('screen_nokia').value;
+            let temp;
+            if (id === 'send_no') {
+                console.log('messages ---> ', messages);
+                console.log('get out box --->', iphone.getOutBox());
+                nokia.getOutBox().push(messages);
+                iphone.setInBox(nokia.getOutBox())
+                console.log(iphone.getInBox())
+                count1++;
+                document.getElementById('screen_iphone').value = "Ban co " + count1 + ' tin nhan';
+            } else {
+                console.log('get out box --->', nokia.getOutBox());
+                iphone.getOutBox().push(messages);
+            }
+        }
+
+        function readMesNokia() {
+            document.getElementById('screen_nokia').value = nokia.getInBox();
+            console.log('o day ', iphone.getInBox());
         }
 
     </script>
