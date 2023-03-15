@@ -8,12 +8,14 @@
 <script>
 let i,j;
 let n=+prompt("Nhap vao chieu cao cua hinh tam giac : ");
-for (let i = 0; i <=n ; i++) {
-    for (let j = 0; j <=n ; j++) {
-        document.write("&nbsp");
-    }
-    for (j=1;j<=2*i-1;j++){
-        document.write("*");
+for (let i = 0; i <n ; i++) {
+    for (j=0;j<n+i;j++){
+        if (j+i>=n+1){
+            document.write("*");
+        }else {
+            document.write("&nbsp;&nbsp;");
+        }
+
     }
     document.write("<br>");
 }

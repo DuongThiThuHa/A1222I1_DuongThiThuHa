@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Xâu kí tự</title>
+</head>
+<body>
+<script>
+    function commonCharacterCount(s1, s2) {
+        let count = 0;
+        let s1Arr = s1.split('');
+        let s2Arr = s2.split('');
+        for (let i = 0; i < s1Arr.length; i++) {
+            for (let j = 0; j < s2Arr.length; j++) {
+                if (s1Arr[i] === s2Arr[j]) {
+                    count++;
+                    s2Arr[j] = '*';
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+    let s1 = prompt("Nhập xâu kí tự thứ nhất: ")
+    let s2 = prompt("Nhập xâu kí tự thứ hai: ")
+    alert(commonCharacterCount(s1, s2));
+</script>
+</body>
+</html>

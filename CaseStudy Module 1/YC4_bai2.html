@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đặt thức uống</title>
+</head>
+
+<body>
+<script>
+    function differentSymbolsNaive(s) {
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+            for (let j = i + 1; j < s.length; j++) {
+                if (s[i] === s[j]) {
+                    count++;
+                }
+            }
+        }
+        return s.length - count;
+    }
+    let s = prompt("Nhập vào xâu kí tự.")
+    alert(differentSymbolsNaive(s));
+</script>
+</body>
+
+</html>

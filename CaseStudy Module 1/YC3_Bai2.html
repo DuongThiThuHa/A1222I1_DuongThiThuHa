@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missing Value</title>
+</head>
+<body>
+<script>
+    let arr1 = [];
+    let arr2 = [];
+    let flag = false;
+    arr1 = prompt("Nhap vao chuoi thu 1: ").split(' ');
+    arr2 = prompt("Nhap vao chuoi thu 2: ").split(' ');
+
+    for (let i = 0; i < arr1.length; i++) {
+        flag = true;
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+                flag = false;
+                break;
+            } else {
+                flag = true;
+            }
+        }
+        if (flag) {
+            document.write(arr1[i]);
+        }
+    }
+
+    for (let j = 0; j < arr2.length; j++) {
+        flag = true;
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr2[j] === arr1[i]) {
+                flag = false;
+                break;
+            } else {
+                flag = true;
+            }
+        }
+        if (flag) {
+            document.write(arr2[j]);
+        }
+
+    }
+</script>
+</body>
+</html>

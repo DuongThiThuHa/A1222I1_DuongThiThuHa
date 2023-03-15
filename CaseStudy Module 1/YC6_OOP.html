@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP</title>
+</head>
+<body>
+<div id="studentTable">
+</div>
+<script>
+    class Student{
+        constructor(STCode, Name, Class, Email, Date ) {
+            this.STCode = STCode;
+            this.Name = Name;
+            this.Class = Class;
+            this.Email = Email;
+            this.Date = Date;
+        }
+    }
+    let student1 = new Student("HV-0001", "Nguyễn Văn A", "C1022G1" ,"nguyenvana@gmail.com", "01/01/2004");
+    let student2 = new Student("HV-0002", "Nguyễn Văn B", "C1122G1" ,"nguyenvanb@gmail.com", "02/02/2004");
+    let student3 = new Student("HV-0003", "Nguyễn Thị C", "C1222G1" ,"nguyenthic@gmail.com", "03/03/2004");
+
+    let studentList = [student1,student2,student3];
+    displayList(studentList);
+
+    function displayList(list) {
+        let table = "<table>" +
+            "<tr>" +
+            "<th>Mã học viên</th>" +
+            "<th>Họ và tên</th>" +
+            "<th>Lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày sinh </th>" +
+            "</tr>"
+
+
+        for (let i = 0; i < studentList.length; i++) {
+            table += "<tr>" +
+                "<td>" + (studentList[i].STCode) +"</td>" +
+                "<td>" + (studentList[i].Name) +"</td>" +
+                "<td>" + (studentList[i].Class) +"</td>" +
+                "<td>" + (studentList[i].Email) +"</td>" +
+                "<td>" + (studentList[i].Date) +"</td>" +
+                "<td>" + '<button onclick="deleteStudent(' + i +')"> Xoá học viên </button>' +"</td>" +
+                "<td>" + '<button onclick="addStudent(' + i +')"> Thêm học viên </button>' +"</td>" +
+                "</tr>"
+        }
+        table += "</table>";
+        document.getElementById('studentTable').innerHTML = table;
+    }
+
+    //Xoá
+    function deleteStudent(id) {
+        alert("Xoá học viên" + studentList[id].Name)
+        studentList.splice(id,1);
+        displayList(studentList);
+    }
+
+    //Thêm
+    function addStudent(id) {
+        alert("Thêm học viên" + studentList[id].Name)
+        studentList.splice(1,id);
+        displayList(studentList);
+    }
+
+
+</script>
+</body>
+</html>
