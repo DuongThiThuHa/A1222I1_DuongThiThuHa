@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Xâu kí tự</title>
 </head>
-
 <body>
-
 <script>
     function chuanHoa(str) {
-        var str = str.toLowerCase();
-        var arr = str.split(" ");
-        var result = "";
-        for (var i = 0; i < arr.length; i++) {
+        let str = str.toLowerCase();
+        let arr = str.split(" ");
+        let result = "";
+        for (let i = 0; i < arr.length; i++) {
             result += arr[i].charAt(0).toUpperCase() + arr[i].slice(1) + " ";
         }
         return result;
     };
     function timTuDaiNhat(str) {
-        var str = chuanHoa(str);
-        var arr = str.split(" ");
-        var max = 0;
-        var result = "";
-        for (var i = 0; i < arr.length; i++) {
+        let str = chuanHoa(str);
+        let arr = str.split(" ");
+        let max = 0;
+        let result = "";
+        for (let i = 0; i < arr.length; i++) {
             if (arr[i].length > max) {
                 max = arr[i].length;
                 result = arr[i];
@@ -32,7 +29,7 @@
         }
         return result;
     };
-    var str = prompt("Nhập xâu ký tự: ");
+    let str = prompt("Nhập xâu ký tự: ");
     document.write("Xâu trước khi chuẩn hóa: " + str + "<br>");
     document.write("Xâu sau khi chuẩn hóa: " + chuanHoa(str) + "<br>");
     document.write("Từ dài nhất trong xâu: " + timTuDaiNhat(str));

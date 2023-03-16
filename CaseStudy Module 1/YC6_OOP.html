@@ -3,68 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <title>OOP</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-<div id="studentTable">
+<body onload="renderListStudent()">
+
+<!--form table-->
+<div class="form-student">
+    <h3>Thông tin học viên</h3>
+    <label>Mã Học Viên</label>
+    <input type="text" id="StCode">
+    <span id="StCode-error" class="error"></span>
+    <br>
+
+    <label>Tên Học Viên</label>
+    <input type="text" id="Name">
+    <span id="Name-error" class="error"></span>
+
+    <br>
+
+    <label>Lớp</label>
+    <input type="text" id="Class">
+    <span id="Class-error" class="error"></span>
+    <br>
+
+    <label>Email</label>
+    <input type="text" id="Email">
+    <span id="Email-error" class="error"></span>
+    <br>
+
+    <label>Ngày Sinh</label>
+    <input type="date" id="Date">
+    <span id="Date-error" class="error"></span>
+    <br>
+
+    <button onclick="save()">Lưu Thông Tin</button>
 </div>
+
+
+<div class="list-student">
+    <h3>Danh sach học viên</h3>
+    <table id="grid-students" width="850px" border="1" cellpadding="2" cellspacing="1"></table>
+</div>
+
+
+<!--script-->
+<script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
 <script>
-    class Student{
-        constructor(STCode, Name, Class, Email, Date ) {
-            this.STCode = STCode;
-            this.Name = Name;
-            this.Class = Class;
-            this.Email = Email;
-            this.Date = Date;
+
+    // Email Error
+    let students = localStorage.getItem('students') ? JSON.parse(localStorage.getItem('students')) : [];
+    if(students.length != 0){
+        renderListStudent()
+    }
+    function emailIsValid(Email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email)
+    }
+    //
+
+    // Save Infor
+    function save() {
+        let StCode = document.getElementById('StCode').value;
+        let Name = document.getElementById('Name').value;
+        let Class = document.getElementById('Class').value;
+        let Email = document.getElementById('Email').value;
+        let Date = document.getElementById('Date').value;
+
+// Ma Sinh Vien
+        if (_.isEmpty(StCode)) {
+            document.getElementById('StCode-error').innerHTML = "Vui long nhap lai ma hoc vien !";
+        } else {
+            document.getElementById('StCode-error').innerHTML = "";
         }
-    }
-    let student1 = new Student("HV-0001", "Nguyễn Văn A", "C1022G1" ,"nguyenvana@gmail.com", "01/01/2004");
-    let student2 = new Student("HV-0002", "Nguyễn Văn B", "C1122G1" ,"nguyenvanb@gmail.com", "02/02/2004");
-    let student3 = new Student("HV-0003", "Nguyễn Thị C", "C1222G1" ,"nguyenthic@gmail.com", "03/03/2004");
 
-    let studentList = [student1,student2,student3];
-    displayList(studentList);
-
-    function displayList(list) {
-        let table = "<table>" +
-            "<tr>" +
-            "<th>Mã học viên</th>" +
-            "<th>Họ và tên</th>" +
-            "<th>Lớp</th>" +
-            "<th>Email</th>" +
-            "<th>Ngày sinh </th>" +
-            "</tr>"
-
-
-        for (let i = 0; i < studentList.length; i++) {
-            table += "<tr>" +
-                "<td>" + (studentList[i].STCode) +"</td>" +
-                "<td>" + (studentList[i].Name) +"</td>" +
-                "<td>" + (studentList[i].Class) +"</td>" +
-                "<td>" + (studentList[i].Email) +"</td>" +
-                "<td>" + (studentList[i].Date) +"</td>" +
-                "<td>" + '<button onclick="deleteStudent(' + i +')"> Xoá học viên </button>' +"</td>" +
-                "<td>" + '<button onclick="addStudent(' + i +')"> Thêm học viên </button>' +"</td>" +
-                "</tr>"
+        // Ten Hoc Vien
+        if (_.isEmpty(Name)) {
+            document.getElementById('Name-error').innerHTML = "Vui long nhap lai ten hoc vien !";
+        } else if (Name.trim().length <= 1) {
+            document.getElementById('Name-error').innerHTML = "Ten hoc vien khong duoc duoi 1 ky tu !";
+        } else if (Name.trim().length >= 20) {
+            document.getElementById('Name-error').innerHTML = "Ten hoc vien khong duoc lon hon 20 ky tu !";
+        } else {
+            document.getElementById('Name-error').innerHTML = "";
         }
-        table += "</table>";
-        document.getElementById('studentTable').innerHTML = table;
+
+// Lop
+        if (_.isEmpty(Class)) {
+            document.getElementById('Class-error').innerHTML = "Vui long nhap lai ten lop !";
+        }
+
+// Email
+        if (_.isEmpty(Email)) {
+            document.getElementById('Email-error').innerHTML = "Vui long nhap lai email !";
+        } else if (!emailIsValid(Email)) {
+            document.getElementById('Email-error').innerHTML = "Email khong dung dinh dang !";
+        } else {
+            document.getElementById('Email-error').innerHTML = " ";
+        }
+// Luu thong tin trong ds sinh vien
+        if (StCode && Name && Class && Email){
+            students.push({
+                StCode: StCode,
+                Name: Name,
+                Class: Class,
+                Email: Email,
+                Date: Date,
+            });
+        }
+        renderListStudent();
     }
 
-    //Xoá
-    function deleteStudent(id) {
-        alert("Xoá học viên" + studentList[id].Name)
-        studentList.splice(id,1);
-        displayList(studentList);
+
+    function renderListStudent() {
+        let students = localStorage.getItem('students') ? JSON.parse(localStorage.getItem('students')) : [];
+        if (students.length === 0) return false;
+
+        let tableContent = [`<tr>
+            <tr>
+                <td>Mã Học Viên</td>
+                <td>Tên Học Viên</td>
+                <td>Lớp</td>
+                <td>Email</td>
+                <td>Ngày Sinh</td>
+                <td>Chỉnh Sửa</td>
+                </tr>
+             </tr>`];
+
+        let bodyHtmls = students.map((student, index) => {
+            let studentId = index;
+            index++;
+            return `<tr>
+            <td><input  style="border: none" readonly value="${student.StCode}"></td>
+            <td>${student.Name}</td>
+            <td>${student.Class}</td>
+            <td>${student.Email}</td>
+            <td>${student.Date}</td>
+            <td>
+            <a href="#" > Edit</a> | <a href="#" onclick="deleteStudent(${studentId})">Delete</a>
+            </td>
+            </tr>`
+        })
+        let htmls = tableContent.concat(bodyHtmls)
+        document.getElementById('grid-students').innerHTML = htmls.join("")
+        localStorage.setItem('students', JSON.stringify(students))
     }
 
-    //Thêm
-    function addStudent(id) {
-        alert("Thêm học viên" + studentList[id].Name)
-        studentList.splice(1,id);
-        displayList(studentList);
+    // function edit(index) {
+    //     renderListStudent();
+    // }
+
+// xoa hoc vien
+    function deleteStudent (id) {
+        let students = localStorage.getItem('students') ? JSON.parse(localStorage.getItem('students')) : [];
+        students.splice(id, 1);
+        localStorage.setItem('students' , JSON.stringify(students));
+        renderListStudent();
     }
-
-
+    deleteStudent()
 </script>
 </body>
 </html>

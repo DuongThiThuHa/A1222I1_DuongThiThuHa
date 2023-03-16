@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+<script>
+    let call;
+    while (true) {
+        do {
+            call = +prompt(" 1(Cafe) , 2(Cam vat), 3(Nuoc ep ca rot),4(Nuoc ep ca chua),5(Nuoc lot),6(Nuoc dua)");
+        } while (call < 1 || call > 7);
+        let count, total;
+        if(call === 7){
+            break;
+        }
+        switch (call) {
+            case 1:
+                count = +prompt("Cafe - 15000 - So luong");
+                total = count * 15000;
+                break;
+            case 2:
+                count = +prompt("Cam vat - 25000 - So luong");
+                total = count * 25000;
+                break;
+            case 3:
+                count = +prompt("Nuoc ep ca rot - 25000 - So luong");
+                total = count * 25000;
+                break;
+            case 4:
+                count = +prompt("Nuoc ep ca chua - 20000 - So luong");
+                total = count * 20000;
+                break;
+            case 5:
+                count = +prompt("Nuoc lot - 5000 - So luong");
+                total = count * 5000;
+                break;
+            case 6:
+                count = +prompt("Nuoc dua - 25000 - So luong");
+                total = count * 25000;
+                break;
+        }
+        alert("Bill: "+total);
+    }
+</script>
+</body>
+</html>

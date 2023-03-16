@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phan So</title>
+</head>
+<body>
+<script>
+    let max;
+    let numerators = prompt("Nhap vao tu so : ").split(' ');
+    let denominators = prompt("Nhap vao mau so : ").split(' ');
+    if (numerators.length === denominators.length){
+        max = numerators[0] / denominators[0] ;
+        console.log(max)
+        for (let i =1 ; i< numerators.length ; i++){
+
+           if (numerators[i] / denominators[i] >= max)
+               max = numerators[i] / denominators[i];
+            console.log(max)
+        }
+    }
+    document.write("Phan so max la : " + max);
+</script>
+</body>
+</html>
