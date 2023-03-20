@@ -6,17 +6,14 @@
 </head>
 <body>
 <script>
-    let arr = [];
-    arr += prompt("Nhap vao 1 chuoi ki tu : ")
-
+    let arr = prompt("Nhap vao 1 chuoi ki tu : ").split(" ");
     /*Sắp xếp mảng số theo thứ tự tăng dần*/
     arr.sort(function(a, b) {
         return a - b;
     });
-    console.log("max= ",arr[arr.length-1]);
-
+    document.write(arr+"<br>")
     n = 2
-    console.log("max thứ "+n +"= ",arr[arr.length-n]);
+    document.write("max thứ "+n +"= ",arr[arr.length-n]);
 
 </script>
 </body>
